@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Portal Docente</title>
+    <script src="js/sesion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+</head>
+
+<body data-pagina="inicio">
+
+    <div class="dashboard">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="contenido">
+
+            <header class="topbar">
+                <div>
+                    <span class="periodo" data-periodo-actual></span>
+                    <h1>Panel docente</h1>
+                </div>
+                <div class="usuario-header" id="usuarioHeader"></div>
+            </header>
+
+            <section class="bienvenida">
+                <div>
+                    <span class="etiqueta">PORTAL ACADÉMICO</span>
+                    <h2>Bienvenido, <span data-nombre-usuario></span></h2>
+                    <p>Aquí puedes consultar tus grupos, gestionar evaluaciones y registrar calificaciones.</p>
+                </div>
+                <div class="bienvenida-icono">✦</div>
+            </section>
+
+            <section class="estadisticas">
+                <div class="estadistica">
+                    <div class="estadistica-icono azul"><i class="bi bi-file-person"></i></div>
+                    <div><span>Mis grupos</span><strong id="statGrupos">–</strong></div>
+                </div>
+                <div class="estadistica">
+                    <div class="estadistica-icono amarillo"><i class="bi bi-backpack3"></i></div>
+                    <div><span>Estudiantes</span><strong id="statEstudiantes">–</strong></div>
+                </div>
+                <div class="estadistica">
+                    <div class="estadistica-icono azul"><i class="bi bi-card-checklist"></i></div>
+                    <div><span>Evaluaciones del periodo</span><strong id="statEvaluaciones">–</strong></div>
+                </div>
+                <div class="estadistica">
+                    <div class="estadistica-icono amarillo">!</div>
+                    <div><span>Pendientes de Registro</span><strong id="statPendientes">–</strong></div>
+                </div>
+            </section>
+
+            <section class="paneles">
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h2>Accesos rápidos</h2>
+                            <p>Acciones frecuentes</p>
+                        </div>
+                    </div>
+
+                    <div class="accesos">
+                        <a href="calificaciones.html" class="acceso">
+                            <div class="acceso-icono"><i class="bi bi-card-checklist"></i></div>
+                            <div>
+                                <strong>Ingresar calificaciones</strong>
+                                <span>Registra las notas de tus estudiantes</span>
+                            </div>
+                            <b>›</b>
+                        </a>
+
+                        <a href="grupos.html" class="acceso">
+                            <div class="acceso-icono"><i class="bi bi-file-person"></i></div>
+                            <div>
+                                <strong>Mis grupos</strong>
+                                <span>Consulta tus grupos asignados</span>
+                            </div>
+                            <b>›</b>
+                        </a>
+
+                        <a href="evaluaciones.html" class="acceso">
+                            <div class="acceso-icono"><i class="bi bi-journal-text"></i></div>
+                            <div>
+                                <strong>Evaluaciones</strong>
+                                <span>Consulta tus evaluaciones</span>
+                            </div>
+                            <b>›</b>
+                        </a>
+
+                        <a href="actas.html" class="acceso">
+                            <div class="acceso-icono"><i class="bi bi-file-earmark-spreadsheet"></i></div>
+                            <div>
+                                <strong>Actas y registros</strong>
+                                <span>Imprime o exporta las actas de calificaciones</span>
+                            </div>
+                            <b>›</b>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h2>Avisos</h2>
+                            <p>Información importante</p>
+                        </div>
+                        <a href="calendario.html">Ver calendario</a>
+                    </div>
+                    <div id="listaAvisos"></div>
+                </div>
+
+            </section>
+
+            <section class="panel calendario">
+                <div class="panel-header">
+                    <div>
+                        <h2>Calendario académico</h2>
+                        <p>Próximas actividades</p>
+                    </div>
+                    <a href="calendario.html">Ver calendario</a>
+                </div>
+                <div class="eventos" id="listaEventos"></div>
+            </section>
+
+            <footer>Portal Docente · 2026</footer>
+
+        </main>
+
+    </div>
+
+<script src="js/datos.js"></script>
+<script src="js/comun.js"></script>
+<script src="js/notas.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

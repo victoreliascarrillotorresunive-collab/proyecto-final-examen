@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluaciones - Portal Docente</title>
+    <script src="js/sesion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/evaluaciones.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+</head>
+
+<body data-pagina="evaluaciones">
+
+    <div class="dashboard">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="contenido">
+            <header class="topbar">
+                <div>
+                    <span class="periodo" data-periodo-actual></span>
+                    <h1>Evaluaciones</h1>
+                </div>
+                <div class="usuario-header" id="usuarioHeader"></div>
+            </header>
+
+            <section class="bienvenida">
+                <div>
+                    <span class="etiqueta">EVALUACIONES ACADÉMICAS</span>
+                    <h2>Mis evaluaciones</h2>
+                    <p>Administra las evaluaciones de cada grupo, ciclo y periodo. Los cambios también se reflejan en Calificaciones.</p>
+                </div>
+            </section>
+
+            <section class="panel-filtros-evaluaciones">
+                <div class="campo-evaluacion-filtro">
+                    <label for="grupoEvaluaciones">Grupo</label>
+                    <select id="grupoEvaluaciones"></select>
+                </div>
+                <div class="campo-evaluacion-filtro">
+                    <label for="cicloEvaluaciones">Ciclo académico</label>
+                    <select id="cicloEvaluaciones"></select>
+                </div>
+                <div class="campo-evaluacion-filtro">
+                    <label for="periodoEvaluaciones">Periodo</label>
+                    <select id="periodoEvaluaciones"></select>
+                </div>
+            </section>
+
+            <div class="banner-bloqueo" id="bannerBloqueo" role="status" hidden>
+                <i data-lucide="lock"></i>
+                <div id="textoBloqueo"></div>
+            </div>
+
+            <section class="evaluaciones-lista-panel">
+                <div class="encabezado-lista-evaluaciones">
+                    <div><h2>Evaluaciones del periodo</h2><p>Los nombres y porcentajes se comparten con la página de Calificaciones.</p></div>
+                    <span id="totalPorcentajeEvaluaciones" class="total-evaluaciones">Total: 100%</span>
+                </div>
+                <div id="tarjetasEvaluaciones" class="evaluaciones-lista"></div>
+                <form id="formNuevaEvaluacion" class="form-nueva-evaluacion">
+                    <h3>Añadir evaluación</h3>
+                    <p id="ayudaNuevaEvaluacion">Puedes añadir evaluaciones mientras el total de porcentajes sea inferior a 100%.</p>
+                    <div class="campos-nueva-evaluacion">
+                        <label>Nombre de la evaluación<input id="nombreNuevaEvaluacion" type="text" maxlength="80" placeholder="Ej. Proyecto práctico" required></label>
+                        <label>Porcentaje (%)<input id="porcentajeNuevaEvaluacion" type="number" min="0" max="100" step="0.01" required></label>
+                        <button type="submit" id="crearEvaluacion">Crear evaluación</button>
+                    </div>
+                </form>
+                <p id="mensajeEvaluaciones" role="status" aria-live="polite"></p>
+                <a class="volver-calificaciones" id="volverCalificaciones" href="calificaciones.html">Ir a Calificaciones</a>
+            </section>
+        </main>
+
+    </div>
+
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/notas.js"></script>
+    <script src="js/evaluaciones.js"></script>
+</body>
+</html>

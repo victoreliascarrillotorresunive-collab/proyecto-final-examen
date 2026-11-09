@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario - Portal Docente</title>
+    <script src="js/sesion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/calendario.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+</head>
+
+<body data-pagina="calendario">
+
+    <div class="dashboard">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="contenido">
+
+            <header class="topbar">
+                <div>
+                    <span class="periodo" data-periodo-actual></span>
+                    <h1>Calendario</h1>
+                </div>
+                <div class="usuario-header" id="usuarioHeader"></div>
+            </header>
+
+            <section class="bienvenida">
+                <div>
+                    <span class="etiqueta">AGENDA ACADÉMICA</span>
+                    <h2>Calendario académico</h2>
+                    <p>Consulta las próximas actividades y fechas importantes de tus grupos.</p>
+                </div>
+                <div class="bienvenida-icono"><i data-lucide="calendar-days"></i></div>
+            </section>
+
+            <section class="calendario-contenido">
+
+                <div class="panel">
+                    <div class="panel-header">
+                        <div>
+                            <h2 id="tituloMes"></h2>
+                            <p>Actividades programadas</p>
+                        </div>
+                        <div class="nav-mes">
+                            <button type="button" class="btn secundario" id="mesAnterior" aria-label="Mes anterior">‹</button>
+                            <button type="button" class="btn secundario" id="mesHoy">Hoy</button>
+                            <button type="button" class="btn secundario" id="mesSiguiente" aria-label="Mes siguiente">›</button>
+                        </div>
+                    </div>
+                    <div class="eventos-calendario" id="eventosMes"></div>
+                </div>
+
+                <div class="panel resumen-calendario">
+                    <div class="panel-header">
+                        <div>
+                            <h2>Resumen</h2>
+                            <p>Este mes</p>
+                        </div>
+                    </div>
+                    <div id="resumenMes"></div>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/calendario.js"></script>
+</body>
+</html>

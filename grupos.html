@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis grupos - Portal Docente</title>
+    <script src="js/sesion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/grupos.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+</head>
+
+<body data-pagina="grupos">
+
+    <div class="dashboard">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="contenido">
+
+            <header class="topbar">
+                <div>
+                    <span class="periodo" data-periodo-actual></span>
+                    <h1>Mis grupos</h1>
+                </div>
+                <div class="usuario-header" id="usuarioHeader"></div>
+            </header>
+
+            <section class="bienvenida">
+                <div>
+                    <span class="etiqueta">GRUPOS ASIGNADOS</span>
+                    <h2>Mis grupos académicos</h2>
+                    <p>Consulta los grupos que tienes asignados durante el ciclo académico.</p>
+                </div>
+            </section>
+
+            <section class="grupos-lista" id="gruposLista"></section>
+
+        </main>
+
+    </div>
+
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/grupos.js"></script>
+</body>
+</html>

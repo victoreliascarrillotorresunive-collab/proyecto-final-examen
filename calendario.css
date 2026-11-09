@@ -1,0 +1,295 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #172b4d;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.bienvenida {
+    background: #073b82;
+    color: white;
+    border-radius: 11px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+}
+.etiqueta {
+    color: #ffd400;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.bienvenida h2 {
+    font-size: 25px;
+    margin: 7px 0;
+}
+
+.bienvenida p {
+    color: #d6e2f2;
+    font-size: 13px;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.sidebar {
+    width: 235px;
+    min-width: 235px;
+    max-width: 235px;
+    flex-shrink: 0;
+    background: #073b82;
+    color: white;
+    padding: 25px 12px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.sidebar-logo img {
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.docente {
+    padding: 0 8px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.docente strong {
+    display: block;
+    font-size: 15px;
+}
+
+.docente span {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #b9c9e2;
+}
+
+.menu {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    color: #dce7f7;
+    font-size: 14px;
+    width: 100%;
+}
+
+.menu a svg,
+.menu a i {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.menu a:hover,
+.menu-activo {
+    background: rgba(255, 255, 255, .15);
+    color: white !important;
+}
+
+.contenido {
+    flex: 1;
+    padding: 25px 35px;
+    max-width: 1450px;
+}
+
+
+.calendario {
+    margin-bottom: 20px;
+}
+
+.calendario-contenido {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.eventos-calendario {
+    display: flex;
+    flex-direction: column;
+}
+
+.evento-calendario {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 17px 0;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.evento-calendario:last-child {
+    border-bottom: none;
+}
+
+.evento-fecha {
+    width: 55px;
+    min-width: 55px;
+    height: 58px;
+    background: #073b82;
+    color: white;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.evento-fecha strong {
+    font-size: 20px;
+}
+
+.evento-fecha span {
+    color: #ffd400;
+    font-size: 9px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.evento-fecha.finalizada {
+    background: #e9edf3;
+    color: #667085;
+}
+
+.evento-fecha.finalizada span {
+    color: #667085;
+}
+
+.evento-detalle {
+    flex: 1;
+}
+
+.evento-tipo {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.evento-tipo.azul {
+    color: #0755a5;
+}
+
+.evento-tipo.amarillo {
+    color: #a17d00;
+}
+
+.evento-tipo.gris {
+    color: #7b8798;
+}
+
+.evento-detalle h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.evento-detalle p {
+    color: #7b8798;
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.evento-detalle small {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #9aa5b5;
+    font-size: 10px;
+}
+
+.evento-detalle small svg {
+    width: 13px;
+    height: 13px;
+}
+
+.evento-estado {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.evento-estado.pendiente {
+    background: #fff7d6;
+    color: #9b7800;
+}
+
+.evento-estado.activo {
+    background: #e8f5ec;
+    color: #28763d;
+}
+
+.evento-estado.finalizada {
+    background: #edf0f4;
+    color: #667085;
+}
+
+.resumen-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 0;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.resumen-item:last-child {
+    border-bottom: none;
+}
+
+.resumen-item span {
+    color: #7b8798;
+    font-size: 12px;
+}
+
+.resumen-item strong {
+    color: #0755a5;
+    font-size: 17px;
+}
+
+@media (max-width: 900px) {
+    .calendario-contenido {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .evento-calendario {
+        flex-wrap: wrap;
+    }
+    .evento-detalle {
+        min-width: calc(100% - 75px);
+    }
+    .evento-estado {
+        margin-left: 73px;
+    }
+}

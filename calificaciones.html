@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificaciones - Portal Docente</title>
+    <script src="js/sesion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/calificaciones.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+</head>
+
+<body data-pagina="calificaciones">
+
+    <div class="dashboard">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="contenido">
+
+            <header class="topbar">
+                <div>
+                    <span class="periodo" data-periodo-actual></span>
+                    <h1>Calificaciones</h1>
+                </div>
+                <div class="usuario-header" id="usuarioHeader"></div>
+            </header>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Configuración de calificaciones</h2>
+                        <p>Administra las evaluaciones y sus porcentajes por grupo, ciclo y periodo.</p>
+                    </div>
+                </div>
+
+                <div class="filtros">
+                    <div class="campo-filtro">
+                        <label for="grupo">Grupo</label>
+                        <select id="grupo"></select>
+                    </div>
+                    <div class="campo-filtro">
+                        <label for="ciclo">Ciclo académico</label>
+                        <select id="ciclo"></select>
+                    </div>
+                    <div class="campo-filtro">
+                        <label for="periodo">Periodo</label>
+                        <select id="periodo"></select>
+                    </div>
+                </div>
+            </section>
+
+            <div class="banner-bloqueo" id="bannerBloqueo" role="status" hidden>
+                <i data-lucide="lock"></i>
+                <div id="textoBloqueo"></div>
+            </div>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Evaluaciones del periodo</h2>
+                        <p>Edita el nombre y el porcentaje de cada evaluación. El total debe ser exactamente 100% para calcular la nota del periodo.</p>
+                    </div>
+                    <span class="estado" id="estadoPorcentajes">Total: 100%</span>
+                </div>
+
+                <div id="listaEvaluaciones" class="lista-evaluaciones"></div>
+                <div class="acciones-evaluaciones">
+                    <button type="button" id="agregarEvaluacion">+ Añadir evaluación</button>
+                    <button type="button" id="guardarConfiguracion" class="boton-secundario">Guardar evaluaciones</button>
+                </div>
+                <p id="mensajeConfiguracion" role="status"></p>
+            </section>
+
+            <section class="panel tabla-calificaciones">
+                <div class="panel-header">
+                    <div>
+                        <h2>Calificaciones de estudiantes</h2>
+                        <p>Introduce la nota de cada evaluación (escala de 0 a 10) o súbelas todas juntas desde un archivo CSV. Las notas del periodo y del ciclo se calculan automáticamente.</p>
+                    </div>
+                    <span class="chip" id="estadoTabla">Borrador</span>
+                </div>
+
+                <div class="herramientas-tabla">
+                    <button type="button" class="btn primario" id="botonImportar"><i data-lucide="upload"></i>Subir notas (CSV)</button>
+                    <button type="button" class="btn secundario" id="botonPlantilla"><i data-lucide="download"></i>Descargar plantilla</button>
+                    <input type="file" id="archivoNotas" accept=".csv,.txt,text/csv" hidden>
+                </div>
+
+                <div class="tabla-contenedor">
+                    <table id="tablaCalificaciones">
+                        <thead id="encabezadoCalificaciones"></thead>
+                        <tbody id="cuerpoCalificaciones"></tbody>
+                    </table>
+                </div>
+                <details class="resumen-ciclo">
+                    <summary>Resumen del ciclo seleccionado (por estudiante)</summary>
+                    <p class="resumen-ayuda">Se muestran las notas de cada estudiante para el ciclo y grupo seleccionados. Los cambios del periodo actual se reflejan aquí antes de guardar.</p>
+                    <div id="resumenCiclosPorEstudiante" class="resumen-estudiantes"></div>
+                </details>
+                <div class="tabla-footer">
+                    <span id="cantidadEstudiantes"></span>
+                    <button id="guardarCalificaciones" type="button">Guardar calificaciones</button>
+                </div>
+                <p id="mensajeCalificaciones" role="status"></p>
+            </section>
+
+            <section class="panel" id="panelRegistro">
+                <div class="panel-header">
+                    <div>
+                        <h2>Traslado a Registro y exportación</h2>
+                        <p>Al trasladar el periodo a Registro Académico, las notas quedan bloqueadas y no se pueden modificar.</p>
+                    </div>
+                    <span class="chip" id="estadoRegistro">Sin trasladar</span>
+                </div>
+
+                <div id="contenidoRegistro"></div>
+
+                <div class="separador-panel">
+                    <h3>Exportar</h3>
+                    <p class="texto-ayuda">Los archivos se generan con las notas <strong>guardadas</strong>. Se abren directamente en Excel.</p>
+                    <div class="barra-acciones" style="margin-top:12px">
+                        <button type="button" class="btn secundario" id="exportarPeriodo"><i data-lucide="file-down"></i>Notas del periodo (CSV)</button>
+                        <button type="button" class="btn secundario" id="exportarCiclo"><i data-lucide="file-down"></i>Registro del ciclo (CSV)</button>
+                        <a class="btn primario" id="enlaceActa" href="actas.html"><i data-lucide="printer"></i>Ver acta imprimible</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/csv.js"></script>
+    <script src="js/notas.js"></script>
+    <script src="js/calificaciones.js"></script>
+</body>
+</html>

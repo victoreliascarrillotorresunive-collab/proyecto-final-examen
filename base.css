@@ -1,0 +1,74 @@
+/* Estilos compartidos por todas las páginas internas del portal.
+   Se carga DESPUÉS del CSS de cada página para que el "shell"
+   (barra lateral, cabecera, paneles) sea idéntico en todas. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, Helvetica, sans-serif; background: #f5f7fa; color: #172b4d; }
+a { text-decoration: none; color: inherit; }
+
+.dashboard { display: flex; min-height: 100vh; width: 100%; }
+
+.sidebar {
+    width: 235px; min-width: 235px; max-width: 235px; flex-shrink: 0;
+    background: #073b82; color: #fff; padding: 25px 12px;
+    display: flex; flex-direction: column; min-height: 100vh;
+}
+.sidebar-logo { text-align: center; margin-bottom: 22px; }
+.sidebar-logo img { width: 82px; height: 82px; object-fit: contain; display: block; margin: 0 auto; }
+.docente { padding: 0 8px 25px; border-bottom: 1px solid rgba(255, 255, 255, .15); }
+.docente strong { display: block; font-size: 15px; }
+.docente span { display: block; margin-top: 5px; font-size: 12px; color: #b9c9e2; }
+
+.menu { margin-top: 25px; width: 100%; }
+.menu a, .menu-inferior a {
+    display: flex; align-items: center; gap: 12px; width: 100%;
+    padding: 12px 14px; margin-bottom: 6px; border-radius: 8px;
+    color: #dce7f7; font-size: 14px;
+}
+.menu a svg, .menu a i, .menu-inferior a svg, .menu-inferior a i { width: 18px; height: 18px; flex-shrink: 0; }
+.menu a:hover, .menu-inferior a:hover, .menu-activo { background: rgba(255, 255, 255, .15); color: #fff !important; }
+.menu-inferior { margin-top: auto; border-top: 1px solid rgba(255, 255, 255, .15); padding-top: 15px; }
+
+.contenido { flex: 1; min-width: 0; padding: 25px 35px; max-width: 1450px; }
+
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; gap: 16px; }
+.periodo { color: #7b8798; font-size: 11px; font-weight: bold; letter-spacing: .5px; }
+.topbar h1 { text-align: left; font-size: 25px; margin-top: 5px; }
+.usuario-header { display: flex; align-items: center; gap: 10px; }
+.avatar {
+    width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; background: #ffd400; color: #073b82; font-size: 13px; font-weight: bold;
+}
+.usuario-header strong, .usuario-header span { display: block; }
+.usuario-header strong { font-size: 13px; }
+.usuario-header span { margin-top: 3px; color: #7b8798; font-size: 11px; }
+
+.bienvenida {
+    background: #073b82; color: #fff; border-radius: 11px; padding: 28px 30px;
+    display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
+}
+.etiqueta { color: #ffd400; font-size: 10px; font-weight: bold; letter-spacing: 1px; }
+.bienvenida h2 { font-size: 25px; margin: 7px 0; }
+.bienvenida p { color: #d6e2f2; font-size: 13px; }
+.bienvenida-icono {
+    width: 65px; height: 65px; display: flex; align-items: center; justify-content: center;
+    background: rgba(255, 255, 255, .1); border-radius: 50%; color: #ffd400; font-size: 27px;
+}
+
+.panel { background: #fff; border-radius: 9px; padding: 23px; box-shadow: 0 3px 12px rgba(0, 0, 0, .04); margin-bottom: 20px; }
+.paneles .panel, .calendario-contenido .panel { margin-bottom: 0; }
+.panel-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.panel-header h2 { font-size: 17px; }
+.panel-header p { color: #7b8798; font-size: 12px; margin-top: 4px; }
+.panel-header a { color: #0755a5; font-size: 12px; }
+
+footer { text-align: right; color: #9aa5b5; font-size: 10px; padding: 5px; }
+
+@media (max-width: 900px) {
+    .dashboard { flex-direction: column; }
+    .sidebar { width: 100%; min-width: 0; max-width: none; min-height: 0; }
+    .menu-inferior { margin-top: 15px; }
+    .contenido { padding: 20px 16px; }
+    .topbar { flex-wrap: wrap; }
+}
+
+[hidden] { display: none !important; }

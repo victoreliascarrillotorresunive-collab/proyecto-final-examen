@@ -1,0 +1,613 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #172b4d;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.sidebar {
+    width: 235px;
+    min-width: 235px;
+    max-width: 235px;
+    flex-shrink: 0;
+    background: #073b82;
+    color: white;
+    padding: 25px 12px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.sidebar-logo img {
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.docente {
+    padding: 0 8px 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+
+.docente strong {
+    display: block;
+    font-size: 15px;
+}
+
+.docente span {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #b9c9e2;
+}
+
+.menu {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    color: #dce7f7;
+    font-size: 14px;
+    width: 100%;
+}
+
+.menu a svg,
+.menu a i {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.menu a:hover,
+.menu-activo {
+    background: rgba(255, 255, 255, .15);
+    color: white !important;
+}
+
+.contenido {
+    flex: 1;
+    padding: 25px 35px;
+    max-width: 1450px;
+}
+.bienvenida {
+    background: #073b82;
+    color: white;
+    border-radius: 11px;
+    padding: 28px 30px;
+    margin-bottom: 20px;
+}
+
+.etiqueta {
+    color: #ffd400;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.bienvenida h2 {
+    font-size: 25px;
+    margin: 7px 0;
+}
+
+.bienvenida p {
+    color: #d6e2f2;
+    font-size: 13px;
+}
+
+.evaluaciones-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.evaluacion-card {
+    background: white;
+    border-radius: 9px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .04);
+}
+
+.evaluacion-fecha {
+    width: 55px;
+    min-width: 55px;
+    height: 60px;
+    background: #073b82;
+    color: white;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.evaluacion-fecha strong {
+    font-size: 20px;
+}
+
+.evaluacion-fecha span {
+    color: #ffd400;
+    font-size: 9px;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.evaluacion-fecha.finalizada {
+    background: #e9edf3;
+    color: #667085;
+}
+
+.evaluacion-fecha.finalizada span {
+    color: #667085;
+}
+
+.evaluacion-info {
+    flex: 1;
+}
+
+.evaluacion-info h2 {
+    font-size: 16px;
+    margin: 4px 0;
+}
+
+.evaluacion-info p {
+    color: #7b8798;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.evaluacion-info small {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #9aa5b5;
+    font-size: 11px;
+}
+
+.evaluacion-info small svg {
+    width: 13px;
+    height: 13px;
+}
+
+.evaluacion-estado {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.evaluacion-estado.pendiente {
+    background: #fff7d6;
+    color: #9b7800;
+}
+
+.evaluacion-estado.activo {
+    background: #e8f5ec;
+    color: #28763d;
+}
+
+.evaluacion-estado.finalizada {
+    background: #edf0f4;
+    color: #667085;
+}
+
+.boton-evaluacion {
+    padding: 10px 14px;
+    background: #0755a5;
+    color: white;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.boton-evaluacion:hover {
+    background: #064886;
+}
+
+@media (max-width: 750px) {
+    .evaluacion-card {
+        flex-wrap: wrap;
+    }
+    .evaluacion-info {
+        min-width: calc(100% - 75px);
+    }
+    .evaluacion-estado, .boton-evaluacion {
+        margin-left: 73px;
+    }
+}
+
+.panel-filtros-evaluaciones,
+.evaluaciones-lista-panel {
+    background: #fff;
+    border-radius: 11px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .04);
+}
+
+.panel-filtros-evaluaciones {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.campo-evaluacion-filtro,
+.porcentaje-evaluacion-label,
+.campos-nueva-evaluacion label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #52627a;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.campo-evaluacion-filtro select,
+.nombre-evaluacion-editable,
+.porcentaje-evaluacion-label input,
+.campos-nueva-evaluacion input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 11px;
+    border: 1px solid #d8dee8;
+    border-radius: 6px;
+    background: #fff;
+    color: #172b4d;
+    font: inherit;
+    outline: none;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.campo-evaluacion-filtro select:focus,
+.nombre-evaluacion-editable:focus,
+.porcentaje-evaluacion-label input:focus,
+.campos-nueva-evaluacion input:focus {
+    border-color: #0755a5;
+    box-shadow: 0 0 0 3px rgba(7, 85, 165, .10);
+}
+
+.encabezado-lista-evaluaciones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.encabezado-lista-evaluaciones h2 {
+    color: #172b4d;
+    font-size: 19px;
+    margin-bottom: 6px;
+}
+
+.encabezado-lista-evaluaciones p,
+.form-nueva-evaluacion p {
+    color: #7b8798;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.total-evaluaciones {
+    border-radius: 20px;
+    background: #edf0f4;
+    color: #52627a;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.total-evaluaciones.total-correcto {
+    background: #e8f5ec;
+    color: #28763d;
+}
+
+.total-evaluaciones.total-error {
+    background: #fff0ee;
+    color: #b42318;
+}
+
+.evaluaciones-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.evaluacion-card {
+    background: #fff;
+    border: 1px solid #edf0f4;
+    border-radius: 9px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, .04);
+    transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+.evaluacion-card:hover {
+    border-color: #d8e3f2;
+    box-shadow: 0 5px 16px rgba(7, 59, 130, .08);
+}
+
+.evaluacion-icono {
+    width: 55px;
+    min-width: 55px;
+    height: 60px;
+    flex: 0 0 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    background: #073b82;
+    color: #fff;
+}
+
+.evaluacion-icono svg,
+.evaluacion-icono i {
+    width: 23px;
+    height: 23px;
+}
+
+.evaluacion-info {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.evaluacion-info .codigo {
+    color: #0755a5;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+
+.nombre-evaluacion-editable {
+    max-width: 100%;
+    padding: 5px 7px;
+    color: #172b4d;
+    border-color: transparent;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.nombre-evaluacion-editable:hover {
+    border-color: #e0e6ef;
+    background: #fbfcfe;
+}
+
+.porcentaje-evaluacion-label {
+    width: 145px;
+    max-width: 145px;
+    font-size: 11px;
+}
+
+.porcentaje-evaluacion-label input {
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+.acciones-tarjeta-evaluacion {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+    min-width: 125px;
+}
+
+.boton-evaluacion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    background: #0755a5;
+    color: #fff;
+    border: 0;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background .15s ease;
+}
+
+.boton-evaluacion:hover,
+.campos-nueva-evaluacion button:hover:not(:disabled) {
+    background: #064886;
+}
+
+.boton-eliminar-evaluacion {
+    border: 1px solid #f3d5d2;
+    background: #fff;
+    color: #b42318;
+    border-radius: 6px;
+    padding: 9px 12px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.boton-eliminar-evaluacion:hover {
+    background: #fff0ee;
+}
+
+.form-nueva-evaluacion {
+    border-top: 1px solid #e5eaf1;
+    margin-top: 24px;
+    padding-top: 20px;
+}
+
+.form-nueva-evaluacion h3 {
+    color: #172b4d;
+    margin-bottom: 7px;
+    font-size: 16px;
+}
+
+.campos-nueva-evaluacion {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) 170px auto;
+    align-items: end;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.campos-nueva-evaluacion button {
+    border: 0;
+    border-radius: 6px;
+    padding: 11px 15px;
+    background: #0755a5;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background .15s ease;
+}
+
+.campos-nueva-evaluacion button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+#mensajeEvaluaciones {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.volver-calificaciones {
+    display: inline-block;
+    margin-top: 16px;
+    color: #0755a5;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.volver-calificaciones:hover {
+    color: #064886;
+    text-decoration: underline;
+}
+
+.evaluacion-destacada {
+    outline: 3px solid #f0c419;
+    outline-offset: 2px;
+}
+
+@media (max-width: 950px) {
+    .panel-filtros-evaluaciones {
+        grid-template-columns: 1fr;
+    }
+
+    .evaluacion-card {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .evaluacion-info {
+        flex: 1 1 calc(100% - 75px);
+    }
+
+    .porcentaje-evaluacion-label {
+        width: 100%;
+        max-width: 180px;
+    }
+
+    .acciones-tarjeta-evaluacion {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: 73px;
+    }
+
+    .campos-nueva-evaluacion {
+        grid-template-columns: 1fr;
+    }
+
+    .campos-nueva-evaluacion button {
+        min-height: 40px;
+    }
+}
+
+@media (max-width: 520px) {
+    .contenido {
+        padding: 18px 14px;
+    }
+
+    .panel-filtros-evaluaciones,
+    .evaluaciones-lista-panel {
+        padding: 16px;
+    }
+
+    .encabezado-lista-evaluaciones {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .evaluacion-card {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .acciones-tarjeta-evaluacion {
+        margin-left: 0;
+    }
+}
+
+.estado-evaluacion-label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #52627a;
+    font-size: 11px;
+    font-weight: 700;
+}
+.selector-estado-evaluacion {
+    min-width: 150px;
+    padding: 8px 10px;
+    border: 1px solid #d8dee8;
+    border-radius: 6px;
+    background: #fff;
+    color: #172b4d;
+    font: inherit;
+}
+.evaluacion-estado {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin: 1px 0 2px;
+}

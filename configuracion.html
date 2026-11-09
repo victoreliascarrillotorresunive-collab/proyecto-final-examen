@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración - Portal Docente</title>
+    <script src="js/sesion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/calificaciones.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+</head>
+
+<body data-pagina="configuracion">
+
+    <div class="dashboard">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="contenido">
+
+            <header class="topbar">
+                <div>
+                    <span class="periodo" data-periodo-actual></span>
+                    <h1>Configuración</h1>
+                </div>
+                <div class="usuario-header" id="usuarioHeader"></div>
+            </header>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Preferencias</h2>
+                        <p>Se guardan en este navegador.</p>
+                    </div>
+                </div>
+                <form id="formAjustes" class="formulario-config">
+                    <label>Nombre para mostrar
+                        <input id="ajusteNombre" type="text" maxlength="60" autocomplete="name">
+                        <small>Aparece en el saludo, la cabecera y las actas. Si lo dejas vacío se usa tu usuario.</small>
+                    </label>
+                    <label>Ciclo académico predeterminado
+                        <select id="ajusteCiclo"></select>
+                        <small>Es el ciclo que se abre por defecto en Calificaciones, Evaluaciones y Actas.</small>
+                    </label>
+                    <label>Nota mínima de aprobación (0 a 10)
+                        <input id="ajusteNota" type="number" min="0" max="10" step="0.1" required>
+                        <small>Define quién aparece como aprobado o reprobado.</small>
+                    </label>
+                    <div class="barra-acciones">
+                        <button type="submit" class="btn primario">Guardar preferencias</button>
+                    </div>
+                    <p id="mensajeAjustes" role="status"></p>
+                </form>
+            </section>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Traslados a Registro</h2>
+                        <p>Periodos bloqueados por haber sido trasladados a Registro Académico.</p>
+                    </div>
+                </div>
+                <div class="tabla-contenedor" id="tablaTraslados"></div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Datos de demostración</h2>
+                        <p>Herramientas para probar el portal. Solo afectan a los datos guardados en este navegador.</p>
+                    </div>
+                </div>
+                <div class="barra-acciones">
+                    <button type="button" class="btn secundario" id="cargarEjemplo"><i data-lucide="database"></i>Cargar notas de ejemplo</button>
+                    <button type="button" class="btn peligro" id="borrarDatos"><i data-lucide="trash-2"></i>Borrar todos los datos</button>
+                </div>
+                <p class="texto-ayuda" style="margin-top:12px">«Cargar notas de ejemplo» llena los periodos 1 y 2 del Ciclo II - 2026 de todos los grupos y los traslada a Registro, para que el Periodo 3 quede libre para probar la subida masiva, el traslado y el acta.</p>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/notas.js"></script>
+    <script src="js/configuracion.js"></script>
+</body>
+</html>

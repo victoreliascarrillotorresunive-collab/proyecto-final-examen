@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actas y registros - Portal Docente</title>
+    <script src="js/sesion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/calificaciones.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+</head>
+
+<body data-pagina="actas">
+
+    <div class="dashboard">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="contenido">
+
+            <header class="topbar">
+                <div>
+                    <span class="periodo" data-periodo-actual></span>
+                    <h1>Actas y registros</h1>
+                </div>
+                <div class="usuario-header" id="usuarioHeader"></div>
+            </header>
+
+            <section class="panel no-imprimir">
+                <div class="panel-header">
+                    <div>
+                        <h2>Generar acta</h2>
+                        <p>Elige el grupo y el documento. El acta se genera con las notas guardadas: imprímela, guárdala como PDF o exporta los datos a Excel (CSV).</p>
+                    </div>
+                </div>
+
+                <div class="filtros-acta">
+                    <label>Grupo<select id="actaGrupo"></select></label>
+                    <label>Ciclo académico<select id="actaCiclo"></select></label>
+                    <label>Documento
+                        <select id="actaTipo">
+                            <option value="periodo">Acta de calificaciones del periodo</option>
+                            <option value="ciclo">Registro de notas del ciclo</option>
+                        </select>
+                    </label>
+                    <label id="campoPeriodo">Periodo<select id="actaPeriodo"></select></label>
+                </div>
+
+                <div class="barra-acciones" style="margin-top:18px">
+                    <button type="button" class="btn primario" id="imprimirActa"><i data-lucide="printer"></i>Imprimir / guardar PDF</button>
+                    <button type="button" class="btn secundario" id="exportarActa"><i data-lucide="file-down"></i>Exportar CSV (Excel)</button>
+                </div>
+            </section>
+
+            <div class="banner-bloqueo no-imprimir" id="avisoActa" hidden>
+                <i data-lucide="info"></i>
+                <div id="textoAvisoActa"></div>
+            </div>
+
+            <article class="hoja-acta" id="hojaActa" aria-label="Vista previa del acta"></article>
+
+        </main>
+
+    </div>
+
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/csv.js"></script>
+    <script src="js/notas.js"></script>
+    <script src="js/actas.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda - Portal Docente</title>
+    <script src="js/sesion.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/manual.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/componentes.css">
+</head>
+
+<body data-pagina="manual">
+
+    <div class="dashboard">
+
+        <aside class="sidebar" id="sidebar"></aside>
+
+        <main class="contenido">
+
+            <header class="topbar">
+                <div>
+                    <span class="periodo" data-periodo-actual></span>
+                    <h1>Ayuda</h1>
+                </div>
+                <div class="usuario-header" id="usuarioHeader"></div>
+            </header>
+
+            <section class="bienvenida">
+                <div>
+                    <span class="etiqueta">MANUAL DE USUARIO</span>
+                    <h2>¿Cómo usar el Portal Docente?</h2>
+                    <p>Mira el video tutorial y sigue el manual paso a paso. Cada sección tiene un botón que te lleva directo a esa página del portal.</p>
+                </div>
+                <div class="bienvenida-icono"><i data-lucide="circle-help"></i></div>
+            </section>
+
+            <!-- VIDEO + CAPÍTULOS (los dibuja js/manual.js) -->
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Video tutorial</h2>
+                        <p>Recorrido completo por el Portal Docente. Pulsa un capítulo para saltar a esa parte.</p>
+                    </div>
+                </div>
+                <div class="video-layout">
+                    <div class="video-contenedor" id="videoContenedor"></div>
+                    <nav class="capitulos" aria-label="Capítulos del video">
+                        <h3>Capítulos</h3>
+                        <ol id="listaCapitulos"></ol>
+                    </nav>
+                </div>
+            </section>
+
+            <!-- ANTES DE EMPEZAR -->
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Antes de empezar</h2>
+                        <p>Datos de acceso y preparación para probar todo el flujo.</p>
+                    </div>
+                </div>
+                <div class="datos-registro">
+                    <div><span>Usuario de demostración</span><strong>admin</strong></div>
+                    <div><span>Contraseña de demostración</span><strong>123456</strong></div>
+                    <div><span>Cierre de sesión automático</span><strong>30 min sin actividad</strong></div>
+                </div>
+                <p class="texto-ayuda">Los datos se guardan en este navegador. Para practicar, ve a Configuración y pulsa «Cargar notas de ejemplo»: llena los periodos 1 y 2 y deja libre el Periodo 3.</p>
+                <div class="barra-acciones" style="margin-top:14px">
+                    <a class="btn primario" href="configuracion.html"><i data-lucide="database"></i>Ir a Configuración</a>
+                </div>
+            </section>
+
+            <!-- MANUAL (lo dibuja js/manual.js) -->
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Manual de usuario</h2>
+                        <p>Guía por funciones. Marca cada sección cuando la hayas probado.</p>
+                    </div>
+                    <span class="chip" id="progresoManual">0 de 0</span>
+                </div>
+                <div class="barra-progreso" aria-hidden="true"><div id="barraProgreso"></div></div>
+                <div id="listaManual"></div>
+            </section>
+
+            <section class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Preguntas frecuentes</h2>
+                        <p>Problemas comunes y cómo resolverlos.</p>
+                    </div>
+                </div>
+                <details class="faq"><summary>No puedo trasladar el periodo a Registro</summary>
+                    <p>Revisa los tres requisitos en Calificaciones: los porcentajes deben sumar 100 %, todas las notas deben estar guardadas y deben coincidir con la configuración actual.</p></details>
+                <details class="faq"><summary>No puedo editar las notas</summary>
+                    <p>El periodo ya fue trasladado a Registro y está bloqueado. Elige otro periodo en el filtro.</p></details>
+                <details class="faq"><summary>Mi archivo CSV da errores al subirlo</summary>
+                    <p>Descarga la plantilla con «Descargar plantilla», llénala sin cambiar los encabezados y usa notas entre 0 y 10. Acepta coma o punto y coma como separador.</p></details>
+                <details class="faq"><summary>El acta sale con la marca «BORRADOR»</summary>
+                    <p>El periodo todavía no fue trasladado a Registro. Traslada el periodo y vuelve a generar el acta.</p></details>
+                <details class="faq"><summary>Mis datos desaparecieron</summary>
+                    <p>Se guardan en el navegador. Si usas otro navegador, modo incógnito o borras los datos del sitio, empiezan vacíos. Usa «Cargar notas de ejemplo» en Configuración.</p></details>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/datos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/manual.js"></script>
+</body>
+</html>

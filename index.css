@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #f4f6f9;
+    color: #172b4d;
+}
+
+.login {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+
+    background-image: url('../img/images2.png'); 
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat;
+}
+
+.login-contenedor {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+h1 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.descripcion {
+    text-align: center;
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px 13px;
+
+    border: 1px solid #d8dee8;
+    border-radius: 7px;
+
+    font-size: 14px;
+    outline: none;
+}
+
+.campo input:focus {
+    border-color: #0755a5;
+}
+
+.opciones {
+    text-align: right;
+    margin-bottom: 22px;
+}
+
+.opciones a {
+    color: #0755a5;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.opciones a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #0755a5;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
